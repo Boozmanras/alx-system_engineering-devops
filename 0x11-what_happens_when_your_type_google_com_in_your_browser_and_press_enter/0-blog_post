@@ -1,0 +1,98 @@
+### What Happens When You Type "https://www.google.com" and Press Enter?
+
+As a software engineer, I often get asked what happens behind the scenes when you type a URL into your browser. The process is fascinating and involves many different components working together seamlessly. Let's break down each step:
+
+#### 1. DNS Request
+
+When you type "https://www.google.com" into your browser and press Enter, the first thing that happens is a **DNS (Domain Name System) request**. Think of DNS as the internet's phonebook. It translates the human-readable domain name "google.com" into an IP address that computers can understand.
+
+**Example:** 
+- You type "https://www.google.com" into your browser.
+- Your browser checks its cache to see if it has recently looked up this address. If not, it asks the operating system, which then queries a DNS resolver (often provided by your ISP).
+- The DNS resolver checks its cache and, if necessary, queries other DNS servers until it finds the IP address for "google.com" (e.g., 172.217.164.110).
+
+#### 2. TCP/IP Communication
+
+With the IP address in hand, your browser needs to establish a connection to Google's servers using the **TCP/IP (Transmission Control Protocol/Internet Protocol)** suite. TCP/IP ensures data packets are sent and received reliably.
+
+**Steps:**
+- **TCP Handshake:** Your browser initiates a three-step handshake to establish a TCP connection:
+  1. **SYN:** Your browser sends a SYN (synchronize) packet to Google's server.
+  2. **SYN-ACK:** The server responds with a SYN-ACK (synchronize-acknowledge) packet.
+  3. **ACK:** Your browser sends an ACK (acknowledge) packet back to the server, completing the handshake.
+
+#### 3. Firewall Security Measures
+
+During the TCP handshake, **firewalls** on both your network and Google's network play a crucial role in security. Firewalls monitor incoming and outgoing traffic to block malicious activity.
+
+**Example:**
+- Your home router's firewall checks the outgoing request to ensure it's legitimate.
+- Google's firewall examines the incoming request for any signs of attack or unauthorized access attempts.
+
+#### 4. HTTPS/SSL Encryption
+
+Given the "https" in the URL, the connection is secured using **HTTPS (Hypertext Transfer Protocol Secure)** and **SSL/TLS (Secure Sockets Layer/Transport Layer Security)** encryption. This step ensures that data transferred between your browser and Google's server is encrypted and secure.
+
+**Steps:**
+- **SSL Handshake:** Your browser and Google's server exchange SSL certificates and cryptographic keys to establish a secure connection.
+- **Encryption:** All data sent and received is encrypted, preventing eavesdropping or tampering.
+
+#### 5. Load-Balancer Distribution of Traffic
+
+Google's infrastructure includes **load balancers** that distribute incoming traffic across multiple servers. Load balancers ensure no single server becomes overwhelmed and that requests are handled efficiently.
+
+**Example:**
+- Your request to "google.com" is directed to a load balancer.
+- The load balancer forwards your request to one of many Google servers based on current traffic and server health.
+
+#### 6. Web Server Handling Incoming Requests
+
+The selected server, often called a **web server**, receives your request. Web servers handle HTTP requests from clients (like your browser) and serve web pages.
+
+**Example:**
+- The web server receives your request for "https://www.google.com".
+- It processes the request and prepares to retrieve the necessary resources to generate the response.
+
+#### 7. Application Server Processing the Request
+
+The web server may forward the request to an **application server** for further processing. Application servers handle dynamic content and business logic.
+
+**Example:**
+- Google's application server processes the search query you might enter after reaching the homepage.
+- It runs algorithms and interacts with databases to generate search results.
+
+#### 8. Database Retrieval of Information
+
+The application server often needs to retrieve data from a **database**. Databases store and manage data in an organized way, allowing for quick retrieval.
+
+**Example:**
+- If you search for "weather today" on Google, the application server queries a database that stores weather information.
+- The database retrieves the relevant data and sends it back to the application server.
+
+#### Bringing It All Together
+
+Finally, the application server generates an HTML response, which the web server sends back to your browser. Your browser receives the response, renders the web page, and displays the results to you.
+
+**Diagram Overview:**
+
+```
+User -> Browser -> DNS Resolver -> IP Address -> TCP/IP -> Firewall -> Load Balancer -> Web Server -> Application Server -> Database
+                                                                      \_____/       \_______/    \_______/     \_____/        |
+                                                                       HTTPS          Handles      Processes   Queries        |
+                                                                                      Request      Request     Data           |
+                                                                                                                \___________ /
+                                                                                                                  Retrieves Data
+```
+
+#### Real-World Scenario
+
+Imagine you're at a café, and you type "https://www.google.com" into your laptop. Here's what happens:
+1. Your laptop's browser sends a DNS request through the café's Wi-Fi to find Google's IP address.
+2. The browser establishes a TCP connection with Google's server, navigating through the café's firewall and any intermediary networks.
+3. HTTPS encryption ensures your search queries are private.
+4. Google's load balancer directs your request to an available server.
+5. The web server receives your request and may involve an application server to handle any specific searches.
+6. The application server queries databases to fetch relevant information.
+7. The response travels back through the same path and is rendered on your browser, showing you Google's homepage or search results.
+
+Understanding this process highlights the complexity and efficiency of modern web technologies, ensuring quick, secure, and reliable access to information with just a few keystrokes.
