@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# This script creates a MySQL backup and compresses it into a tar.gz archive.
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <mysql_root_password>"
+    exit 1
+fi
+
+MYSQL_ROOT_PASSWORD=$1
+
+BACKUP_FILE="backup.sql"
+DATE=$(date +"%d-%m-%Y")
+ARCHIVE_FILE="${DATE}.tar.gz"
+
+mysqldump -u root -p"${MYSQL_ROOT_PASSWORD}" --all-databases > "${BACKUP_FILE}"
+
+if [ $? -ne 0 ]; then
+    echo "Error creating MySQL dump."
+    exit 1
+fi
+
+tar -czf "${ARCHIVE_FILE}" "${BACKUP_FILE}"
+
+if [ $? -ne 0 ]; then
+    echo "Error creating the tar.gz archive."
+    exit 1
+fi
+
+rm -f "${BACKUP_FILE}"
+
+echo "Backup created successfully: ${ARCHIVE_FILE}"
