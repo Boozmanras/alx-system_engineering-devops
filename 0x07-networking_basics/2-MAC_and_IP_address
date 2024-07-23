@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script provides answers for the MAC and IP address questions
+
+echo "2" > 2-MAC_and_IP_address
+echo "1" >> 2-MAC_and_IP_address

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script provides answers for the types of network questions
+
+echo "3" > 1-types_of_network
+echo "2" >> 1-types_of_network
+echo "1" >> 1-types_of_network
