@@ -1,40 +1,22 @@
-0x04-loops conditions and parsing
-This project is part of the ALX System Engineering Devops curriculum. It covers the use of loops, conditions, and parsing in Bash scripting.
-Resources
-The following resources were used in this project:
+# 0x04. Loops, Conditions, and Parsing
 
-Loops sample
-Variable assignment and arithmetic
-Comparison operators
-File test operators
-Make your scripts portable
+This project is about learning how to use loops, conditions, and parsing in Bash scripts.
 
-Requirements
+## Tasks
 
-Allowed editors: vi, vim, emacs
-All files will be interpreted on Ubuntu 20.04 LTS
-All files should end with a new line
-All Bash script files must be executable
-You are not allowed to use awk
-Your Bash scripts must pass Shellcheck (version 0.7.0) without any error
-The first line of all your Bash scripts should be exactly #!/usr/bin/env bash
-The second line of all your Bash scripts should be a comment explaining what the script is doing
+- **0. Create a SSH RSA key pair:** Generate an RSA key pair and share the public key.
+- **1. For Best School loop:** Display "Best School" 10 times using a for loop.
+- **2. While Best School loop:** Display "Best School" 10 times using a while loop.
+- **3. Until Best School loop:** Display "Best School" 10 times using an until loop.
+- **4. If 9, say Hi!:** Display "Best School" 10 times, but for the 9th iteration, display "Best School" and then "Hi" on a new line using a while loop.
+- **5. 4 bad luck, 8 is your chance:** Loop from 1 to 10, displaying different messages for the 4th and 8th iterations using a while loop.
+- **6. Superstitious numbers:** Display numbers from 1 to 20 with special messages for 4, 9, and 17 using a while loop and case statements.
+- **7. Clock:** Display the time for 12 hours and 59 minutes using nested while loops.
+- **8. For ls:** Display the content of the current directory in a list format, showing only the part of the name after the first dash using a for loop.
+- **9. To file, or not to file:** Check if the "school" file exists and give information about it using if and else statements.
+- **10. FizzBuzz:** Display numbers from 1 to 100 with FizzBuzz logic using a for loop.
+- **11. Read and cut:** Display the username, user ID, and home directory path from /etc/passwd using a while loop.
+- **12. Tell the story of passwd:** Display the content of /etc/passwd in a specific format using a while loop and IFS.
+- **13. Let's parse Apache logs:** Display the visitor IP and HTTP status code from the Apache log file using awk.
+- **14. Dig the data:** Group visitors by IP and HTTP status code and display the data sorted by occurrence using awk.
 
-Tasks
-This project covers the following tasks:
-
-Create a SSH RSA key pair
-For Best School loop
-While Best School loop
-Until Best School loop
-If 9, say Hi!
-4 bad luck, 8 is your chance
-Superstitious numbers
-Clock
-For ls
-To file, or not to file
-FizzBuzz
-
-Each task has its own script file and specific requirements. Detailed information about each task can be found in the project's task files.
-Author
-This project was completed by Victor paul as part of the ALX Software Engineering program.

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script groups visitors by IP and HTTP status code, and displays this data in the specified format
+
+awk '{ips[$1 FS $9]++} END {for (i in ips) print ips[i], i}' apache-access.log | sort -nrk1
