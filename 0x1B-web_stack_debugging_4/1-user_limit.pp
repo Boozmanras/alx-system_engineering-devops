@@ -8,7 +8,6 @@ exec { 'Enhance the file limit settings for the 'holberton' user':
 
 }
 
-
 exec { 'Raise the soft file limit for the 'holberton' user':
 
   command => 'sed -i "/holberton soft/s/5/50000/" /etc/security/limits.conf',
